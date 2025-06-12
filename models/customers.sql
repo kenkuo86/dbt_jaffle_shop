@@ -4,11 +4,11 @@
 
 WITH 
 customers AS (
-    SELECT * FROM `dbt-tutorial.jaffle_shop.customers`
+    SELECT * FROM {{ref('stg_customers')}}
 ),
 
 orders AS (
-    SELECT * FROM `dbt-tutorial.jaffle_shop.orders`
+    SELECT * FROM {{ref('stg_orders')}}
 ),
 
 orders_grouped_by_customer_id AS (
